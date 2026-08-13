@@ -37,6 +37,11 @@ components:
         parentCategoryId:
           description: Identifier of the parent category if hierarchical
           type: string
+        isAirConditioned:
+          description: Whether vehicles in this service class are air conditioned.
+            Maps to V1 fulfillment.tags[VEHICLE_INFO].IS_AIR_CONDITIONED_VEHICLE
+            (boolean string "True"/"False").
+          type: boolean
         airConditioningScore:
           description: Numeric air conditioning quality rating for this service class.
             Maps to V1 fulfillment.tags[VEHICLE_INFO].IS_AIR_CONDITIONED value (e.g.

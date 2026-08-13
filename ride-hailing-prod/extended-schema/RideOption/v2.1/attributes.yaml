@@ -270,40 +270,20 @@ components:
                       type: boolean
                     value:
                       type: string
-        serviceClassCode:
-          description: Machine-readable code for the service tier offered (e.g. COMFY,
-            ECO, TAXI, BLACK, SUV_PLUS). Maps to V1 item.descriptor.code.
-          type: string
-        vehicleBodyType:
-          description: Body style or variant code for the vehicle assigned to this
-            offer (e.g. SEDAN, HATCHBACK, TAXI, BLACK, SUV_PLUS). Maps to V1
-            fulfillment.vehicle.variant.
-          type: string
-        vehicleSeatingCapacity:
-          description: Maximum passenger capacity of the vehicle for this offer. Maps
-            to V1 fulfillment.vehicle.capacity.
-          type: integer
-        vehicleCategory:
-          description: Broad vehicle category code as declared by the BPP (e.g. CAB).
-            Maps to V1 fulfillment.vehicle.category.
-          type: string
+        vehicle:
+          description: Vehicle attributes for this ride option. Composes Vehicle/v2.1
+            which adds bodyType, seatingCapacity, category and iconUrl to the v2.0
+            base. Maps to V1 fulfillment.vehicle.* and VEHICLE_INFO tag entries.
+          $ref: https://schema.beckn.io/Vehicle/v2.1/attributes.yaml#/components/schemas/Vehicle
+        serviceClass:
+          description: Service class attributes for this ride option. Composes
+            ServiceClass/v2.1 which adds isAirConditioned and airConditioningScore
+            to the v2.0 base. Maps to V1 fulfillment.tags[VEHICLE_INFO] and
+            item.descriptor.code.
+          $ref: https://schema.beckn.io/ServiceClass/v2.1/attributes.yaml#/components/schemas/ServiceClass
         fulfillmentType:
           description: Fulfillment delivery type for this ride option (e.g. DELIVERY).
             Maps to V1 fulfillment.type.
-          type: string
-        isAirConditioned:
-          description: Whether the vehicle is air conditioned. Maps to V1
-            fulfillment.tags[VEHICLE_INFO].IS_AIR_CONDITIONED_VEHICLE (boolean string
-            "True"/"False").
-          type: boolean
-        airConditioningScore:
-          description: Numeric air conditioning quality rating (e.g. 2.0). Distinct
-            from the boolean isAirConditioned flag. Maps to V1
-            fulfillment.tags[VEHICLE_INFO].IS_AIR_CONDITIONED (float string).
-          type: number
-        vehicleIconUrl:
-          description: URL of an icon image representing this vehicle type for display
-            in the customer app. Maps to V1 items[].tags[VEHICLE_INFO].VEHICLE_ICON_URL.
           type: string
         tipOptions:
           description: JSON-encoded array of tip amounts (in local currency) available
@@ -347,4 +327,18 @@ components:
             V1 items[].tags[GENERAL_INFO].DISTANCE_TO_NEAREST_DRIVER_METER.
             Populated in on_select response.
           type: integer
+        isInsured:
+          description: Whether this ride is covered by insurance. Maps to V1
+            items[].tags[INSURANCE_INFO].IS_INSURED.
+          type: boolean
+        insuredAmount:
+          description: The insurance coverage amount for this ride, if insured. Maps
+            to V1 items[].tags[INSURANCE_INFO].INSURED_AMOUNT. Stored as string to
+            preserve null.
+          type: string
+          nullable: true
+        displayBookingId:
+          description: Human-readable booking reference shown to the customer. Maps
+            to V1 items[].tags[BOOKING_INFO].DISPLAY_BOOKING_ID.
+          type: string
       additionalProperties: false

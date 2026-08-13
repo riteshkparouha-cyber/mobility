@@ -62,18 +62,4 @@ components:
             null and exact decimal representation.
           type: string
           nullable: true
-        isInsured:
-          description: Whether this ride is covered by insurance. Maps to V1
-            items[].tags[INSURANCE_INFO].IS_INSURED.
-          type: boolean
-        insuredAmount:
-          description: The insurance coverage amount for this ride, if insured. Maps
-            to V1 items[].tags[INSURANCE_INFO].INSURED_AMOUNT. Stored as string to
-            preserve null.
-          type: string
-          nullable: true
-        displayBookingId:
-          description: Human-readable booking reference shown to the customer. Maps
-            to V1 items[].tags[BOOKING_INFO].DISPLAY_BOOKING_ID.
-          type: string
       additionalProperties: false

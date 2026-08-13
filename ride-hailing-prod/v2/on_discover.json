@@ -108,14 +108,18 @@
               "vehicleType": {
                 "vehicleCategoryCode": "FOUR_WHEELER"
               },
-              "serviceClassCode": "COMFY",
-              "vehicleBodyType": "SEDAN",
-              "vehicleSeatingCapacity": 4,
-              "vehicleCategory": "CAB",
+              "vehicle": {
+                "bodyType": "SEDAN",
+                "seatingCapacity": 4,
+                "category": "CAB",
+                "iconUrl": "https://raw.githubusercontent.com/witcher-shailesh/github-asset-store/main/uploads/cdn2/1775471380426.png"
+              },
+              "serviceClass": {
+                "serviceClassCode": "COMFY",
+                "isAirConditioned": true,
+                "airConditioningScore": 2.0
+              },
               "fulfillmentType": "DELIVERY",
-              "isAirConditioned": true,
-              "airConditioningScore": 2.0,
-              "vehicleIconUrl": "https://raw.githubusercontent.com/witcher-shailesh/github-asset-store/main/uploads/cdn2/1775471380426.png",
               "tipOptions": "[0,1,2,3,4]",
               "isBlockedSearchRoute": false,
               "isCustomerPreferredSearchRoute": true,
@@ -269,14 +273,18 @@
               "vehicleType": {
                 "vehicleCategoryCode": "FOUR_WHEELER"
               },
-              "serviceClassCode": "ECO",
-              "vehicleBodyType": "HATCHBACK",
-              "vehicleSeatingCapacity": 4,
-              "vehicleCategory": "CAB",
+              "vehicle": {
+                "bodyType": "HATCHBACK",
+                "seatingCapacity": 4,
+                "category": "CAB",
+                "iconUrl": "https://raw.githubusercontent.com/witcher-shailesh/github-asset-store/main/uploads/cdn2/1775471381613.png"
+              },
+              "serviceClass": {
+                "serviceClassCode": "ECO",
+                "isAirConditioned": true,
+                "airConditioningScore": 2.0
+              },
               "fulfillmentType": "DELIVERY",
-              "isAirConditioned": true,
-              "airConditioningScore": 2.0,
-              "vehicleIconUrl": "https://raw.githubusercontent.com/witcher-shailesh/github-asset-store/main/uploads/cdn2/1775471381613.png",
               "tipOptions": "[0,1,2,3,4]",
               "isBlockedSearchRoute": false,
               "isCustomerPreferredSearchRoute": true,
@@ -430,12 +438,16 @@
               "vehicleType": {
                 "vehicleCategoryCode": "FOUR_WHEELER"
               },
-              "serviceClassCode": "TAXI",
-              "vehicleBodyType": "TAXI",
-              "vehicleSeatingCapacity": 4,
-              "vehicleCategory": "CAB",
+              "vehicle": {
+                "bodyType": "TAXI",
+                "seatingCapacity": 4,
+                "category": "CAB",
+                "iconUrl": "https://raw.githubusercontent.com/witcher-shailesh/github-asset-store/main/uploads/cdn2/1775471382831.png"
+              },
+              "serviceClass": {
+                "serviceClassCode": "TAXI"
+              },
               "fulfillmentType": "DELIVERY",
-              "vehicleIconUrl": "https://raw.githubusercontent.com/witcher-shailesh/github-asset-store/main/uploads/cdn2/1775471382831.png",
               "tipOptions": "[0,1,2,3,4]",
               "isBlockedSearchRoute": false,
               "isCustomerPreferredSearchRoute": true,
@@ -581,14 +593,18 @@
               "vehicleType": {
                 "vehicleCategoryCode": "FOUR_WHEELER"
               },
-              "serviceClassCode": "BLACK",
-              "vehicleBodyType": "BLACK",
-              "vehicleSeatingCapacity": 4,
-              "vehicleCategory": "CAB",
+              "vehicle": {
+                "bodyType": "BLACK",
+                "seatingCapacity": 4,
+                "category": "CAB",
+                "iconUrl": "https://raw.githubusercontent.com/witcher-shailesh/github-asset-store/main/uploads/cdn2/1775471379283.png"
+              },
+              "serviceClass": {
+                "serviceClassCode": "BLACK",
+                "isAirConditioned": true,
+                "airConditioningScore": 2.0
+              },
               "fulfillmentType": "DELIVERY",
-              "isAirConditioned": true,
-              "airConditioningScore": 2.0,
-              "vehicleIconUrl": "https://raw.githubusercontent.com/witcher-shailesh/github-asset-store/main/uploads/cdn2/1775471379283.png",
               "tipOptions": "[0,1,2,3,4]",
               "isBlockedSearchRoute": false,
               "isCustomerPreferredSearchRoute": true,
@@ -742,14 +758,18 @@
               "vehicleType": {
                 "vehicleCategoryCode": "FOUR_WHEELER"
               },
-              "serviceClassCode": "SUV_PLUS",
-              "vehicleBodyType": "SUV_PLUS",
-              "vehicleSeatingCapacity": 6,
-              "vehicleCategory": "CAB",
+              "vehicle": {
+                "bodyType": "SUV_PLUS",
+                "seatingCapacity": 6,
+                "category": "CAB",
+                "iconUrl": "https://raw.githubusercontent.com/witcher-shailesh/github-asset-store/main/uploads/cdn2/1775471383993.png"
+              },
+              "serviceClass": {
+                "serviceClassCode": "SUV_PLUS",
+                "isAirConditioned": true,
+                "airConditioningScore": 2.0
+              },
               "fulfillmentType": "DELIVERY",
-              "isAirConditioned": true,
-              "airConditioningScore": 2.0,
-              "vehicleIconUrl": "https://raw.githubusercontent.com/witcher-shailesh/github-asset-store/main/uploads/cdn2/1775471383993.png",
               "tipOptions": "[0,1,2,3,4]",
               "isBlockedSearchRoute": false,
               "isCustomerPreferredSearchRoute": true,

@@ -69,4 +69,12 @@ components:
           description: Maximum number of passengers this vehicle can carry. Maps to
             V1 fulfillment.vehicle.capacity.
           type: integer
+        category:
+          description: Broad vehicle category code declared by the BPP (e.g. CAB,
+            AUTO). Maps to V1 fulfillment.vehicle.category.
+          type: string
+        iconUrl:
+          description: URL of an icon image representing this vehicle type for display
+            in the customer app. Maps to V1 items[].tags[VEHICLE_INFO].VEHICLE_ICON_URL.
+          type: string
       additionalProperties: false
