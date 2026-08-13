@@ -12,7 +12,7 @@
     "timestamp": "2026-08-07T12:22:20.22Z",
     "ttl": "PT2M",
     "schemaContext": [
-      "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
+      "https://schema.beckn.io/TripRequest/2.1/context.jsonld",
       "https://schema.beckn.io/RideOption/2.1/context.jsonld",
       "https://schema.beckn.io/ServiceClass/2.1/context.jsonld",
       "https://schema.beckn.io/FareEstimate/2.1/context.jsonld",
@@ -47,7 +47,7 @@
               "id": "res-trip-01",
               "quantity": {"value": 1, "unit": "trip"},
               "resourceAttributes": {
-                "@context": "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
+                "@context": "https://schema.beckn.io/TripRequest/2.1/context.jsonld",
                 "@type": "TripRequest",
                 "origin": {
                   "geo": {
@@ -74,7 +74,37 @@
                     "addressCountry": "Finland",
                     "postalCode": "00100"
                   }
-                }
+                },
+                "fulfillmentType": "DELIVERY",
+                "vehicleCategory": "CAB",
+                "stops": [
+                  {
+                    "id": "0",
+                    "location": {
+                      "address": "Malminkatu,, Malminkatu 16, 00100 Helsinki, Finland",
+                      "area_code": "00100",
+                      "city": {"name": "Malminkatu 16"},
+                      "country": {"name": "Finland"},
+                      "gps": "60.167387, 24.931445",
+                      "state": {"name": "00100 Helsinki"}
+                    },
+                    "time": {"timestamp": "2026-08-07T12:19:51.910103632Z"},
+                    "type": "START"
+                  },
+                  {
+                    "id": "1",
+                    "location": {
+                      "address": "Mannerheimintie,, Mannerheimintie 2, 00100 Helsinki, Finland",
+                      "area_code": "00100",
+                      "city": {"name": "Mannerheimintie 2"},
+                      "country": {"name": "Finland"},
+                      "gps": "60.166848, 24.943359",
+                      "state": {"name": "00100 Helsinki"}
+                    },
+                    "parent_stop_id": "0",
+                    "type": "END"
+                  }
+                ]
               }
             }
           ],
@@ -84,6 +114,13 @@
             "offerAttributes": {
               "@context": "https://schema.beckn.io/RideOption/2.1/context.jsonld",
               "@type": "RideOption",
+              "fulfillmentType": "DELIVERY",
+              "categoryIds": ["ON_DEMAND_TRIP"],
+              "descriptor": {
+                "code": "BLACK",
+                "name": "Aura",
+                "shortDesc": "Luxury"
+              },
               "vehicleType": {
                 "vehicleCategoryCode": "FOUR_WHEELER"
               },
@@ -195,90 +232,20 @@
               "currency": "EUR",
               "value": 9.125399999999999,
               "components": [
-                {
-                  "type": "UNIT",
-                  "value": 8.04,
-                  "currency": "EUR",
-                  "description": "BASE_FARE"
-                },
-                {
-                  "type": "TAX",
-                  "value": 1.0854,
-                  "currency": "EUR",
-                  "description": "RIDE_VAT"
-                },
-                {
-                  "type": "TOLL",
-                  "value": 0,
-                  "currency": "EUR",
-                  "description": "TOLL_VAT"
-                },
-                {
-                  "type": "UNIT",
-                  "value": 0,
-                  "currency": "EUR",
-                  "description": "DEAD_KILOMETER_FARE"
-                },
-                {
-                  "type": "UNIT",
-                  "value": 8.04,
-                  "currency": "EUR",
-                  "description": "RIDE_FARE_DISCOUNT_APPLICABLE_TAX_EXCLUSIVE"
-                },
-                {
-                  "type": "TAX",
-                  "value": 1.0854,
-                  "currency": "EUR",
-                  "description": "RIDE_FARE_DISCOUNT_APPLICABLE_TAX"
-                },
-                {
-                  "type": "UNIT",
-                  "value": 0,
-                  "currency": "EUR",
-                  "description": "RIDE_FARE_NON_DISCOUNT_APPLICABLE_TAX_EXCLUSIVE"
-                },
-                {
-                  "type": "TAX",
-                  "value": 0,
-                  "currency": "EUR",
-                  "description": "RIDE_FARE_NON_DISCOUNT_APPLICABLE_TAX"
-                },
-                {
-                  "type": "TOLL",
-                  "value": 0,
-                  "currency": "EUR",
-                  "description": "TOLL_FARE_TAX_EXCLUSIVE"
-                },
-                {
-                  "type": "TAX",
-                  "value": 0,
-                  "currency": "EUR",
-                  "description": "TOLL_FARE_TAX"
-                },
-                {
-                  "type": "CANCELLATION_FEE",
-                  "value": 0,
-                  "currency": "EUR",
-                  "description": "CANCELLATION_FEE_TAX_EXCLUSIVE"
-                },
-                {
-                  "type": "TAX",
-                  "value": 0,
-                  "currency": "EUR",
-                  "description": "CANCELLATION_TAX"
-                },
-                {
-                  "type": "FEE",
-                  "value": 0,
-                  "currency": "EUR",
-                  "description": "PARKING_CHARGE_TAX_EXCLUSIVE"
-                },
-                {
-                  "type": "TAX",
-                  "value": 0,
-                  "currency": "EUR",
-                  "description": "PARKING_CHARGE_TAX"
-                }
+                {"type": "UNIT", "value": 8.04, "currency": "EUR", "description": "BASE_FARE"},
+                {"type": "TAX", "value": 1.0854, "currency": "EUR", "description": "RIDE_VAT"},
+                {"type": "TOLL", "value": 0, "currency": "EUR", "description": "TOLL_VAT"},
+                {"type": "UNIT", "value": 0, "currency": "EUR", "description": "DEAD_KILOMETER_FARE"},
+                {"type": "UNIT", "value": 8.04, "currency": "EUR", "description": "RIDE_FARE_DISCOUNT_APPLICABLE_TAX_EXCLUSIVE"},
+                {"type": "TAX", "value": 1.0854, "currency": "EUR", "description": "RIDE_FARE_DISCOUNT_APPLICABLE_TAX"},
+                {"type": "UNIT", "value": 0, "currency": "EUR", "description": "RIDE_FARE_NON_DISCOUNT_APPLICABLE_TAX_EXCLUSIVE"},
+                {"type": "TAX", "value": 0, "currency": "EUR", "description": "RIDE_FARE_NON_DISCOUNT_APPLICABLE_TAX"},
+                {"type": "TOLL", "value": 0, "currency": "EUR", "description": "TOLL_FARE_TAX_EXCLUSIVE"},
+                {"type": "TAX", "value": 0, "currency": "EUR", "description": "TOLL_FARE_TAX"},
+                {"type": "CANCELLATION_FEE", "value": 0, "currency": "EUR", "description": "CANCELLATION_FEE_TAX_EXCLUSIVE"},
+                {"type": "TAX", "value": 0, "currency": "EUR", "description": "CANCELLATION_TAX"},
+                {"type": "FEE", "value": 0, "currency": "EUR", "description": "PARKING_CHARGE_TAX_EXCLUSIVE"},
+                {"type": "TAX", "value": 0, "currency": "EUR", "description": "PARKING_CHARGE_TAX"}
               ]
             },
             "validity": {
@@ -302,6 +269,8 @@
               "name": "DhruvBG"
             },
             "rating": 5.00,
+            "vehicleVariant": "SUV_PLUS",
+            "vehicleCategory": "CAB",
             "tags": [
               {
                 "descriptor": {"code": "DRIVER_DETAILS", "name": "Driver details"},

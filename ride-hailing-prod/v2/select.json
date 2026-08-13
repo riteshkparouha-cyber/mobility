@@ -14,6 +14,7 @@
     "schemaContext": [
       "https://schema.beckn.io/TripRequest/2.1/context.jsonld",
       "https://schema.beckn.io/ServiceClass/2.1/context.jsonld",
+      "https://schema.beckn.io/Passenger/2.0/context.jsonld",
       "https://schema.beckn.io/SettlementTerm/2.1/context.jsonld"
     ]
   },
@@ -64,6 +65,8 @@
                   }
                 },
                 "vehicleVariant": "SEDAN",
+                "fulfillmentType": "DELIVERY",
+                "vehicleCategory": "CAB",
                 "customerDisabilityDisable": true,
                 "isPetRide": false,
                 "billingCategory": "PERSONAL",
@@ -76,6 +79,35 @@
                   "currency": "EUR",
                   "value": "7.82"
                 },
+                "stops": [
+                  {
+                    "id": "0",
+                    "instructions": {"long_desc": ""},
+                    "location": {
+                      "address": "Malminkatu 16, 00100 Helsinki, Finland",
+                      "area_code": "00100",
+                      "city": {"name": "Malminkatu 16"},
+                      "country": {"name": "Finland"},
+                      "gps": "60.167387, 24.931445",
+                      "state": {"name": "00100 Helsinki"}
+                    },
+                    "type": "START"
+                  },
+                  {
+                    "id": "1",
+                    "instructions": {"long_desc": ""},
+                    "location": {
+                      "address": "Mannerheimintie 2, 00100 Helsinki, Finland",
+                      "area_code": "00100",
+                      "city": {"name": "Mannerheimintie 2"},
+                      "country": {"name": "Finland"},
+                      "gps": "60.166848, 24.943359",
+                      "state": {"name": "00100 Helsinki"}
+                    },
+                    "parent_stop_id": "0",
+                    "type": "END"
+                  }
+                ],
                 "tags": [
                   {
                     "descriptor": {"code": "CUSTOMER_INFO", "name": "Customer info"},
@@ -186,6 +218,18 @@
             "serviceClassCode": "COMFY",
             "isAirConditioned": true,
             "airConditioningScore": 2.0
+          }
+        }
+      ],
+      "participants": [
+        {
+          "id": "consumer-001",
+          "participantAttributes": {
+            "@context": "https://schema.beckn.io/Passenger/2.0/context.jsonld",
+            "@type": "Passenger",
+            "person": {
+              "telephone": "9457514297"
+            }
           }
         }
       ],
