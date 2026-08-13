@@ -12,10 +12,10 @@
     "timestamp": "2026-08-07T12:19:59.022Z",
     "ttl": "PT2M",
     "schemaContext": [
-      "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
-      "https://schema.beckn.io/ServiceClass/2.1/context.jsonld",
-      "https://schema.beckn.io/Passenger/2.0/context.jsonld",
-      "https://schema.beckn.io/SettlementTerm/2.1/context.jsonld"
+      "https://schema.beckn.io/TripRequest/v2.2/context.jsonld",
+      "https://schema.beckn.io/ServiceClass/v2.1/context.jsonld",
+      "https://schema.beckn.io/Passenger/v2.1/context.jsonld",
+      "https://schema.beckn.io/SettlementTerm/v2.1/context.jsonld"
     ]
   },
   "message": {
@@ -37,7 +37,7 @@
               "descriptor": {"name": "Comfort", "code": "COMFY", "shortDesc": "Full size"},
               "quantity": {"value": 1, "unit": "trip"},
               "resourceAttributes": {
-                "@context": "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
+                "@context": "https://schema.beckn.io/TripRequest/v2.2/context.jsonld",
                 "@type": "TripRequest",
                 "origin": {
                   "geo": {
@@ -214,7 +214,7 @@
             }
           ],
           "commitmentAttributes": {
-            "@context": "https://schema.beckn.io/ServiceClass/2.1/context.jsonld",
+            "@context": "https://schema.beckn.io/ServiceClass/v2.1/context.jsonld",
             "@type": "ServiceClass",
             "serviceClassCode": "COMFY",
             "isAirConditioned": true,
@@ -226,7 +226,7 @@
         {
           "id": "consumer-001",
           "participantAttributes": {
-            "@context": "https://schema.beckn.io/Passenger/2.0/context.jsonld",
+            "@context": "https://schema.beckn.io/Passenger/v2.1/context.jsonld",
             "@type": "Passenger",
             "person": {
               "telephone": "9457514297"
@@ -239,7 +239,7 @@
           "id": "settlement-1",
           "status": "DRAFT",
           "settlementAttributes": {
-            "@context": "https://schema.beckn.io/SettlementTerm/2.1/context.jsonld",
+            "@context": "https://schema.beckn.io/SettlementTerm/v2.1/context.jsonld",
             "@type": "SettlementTerm",
             "collectedBy": "BPP",
             "paymentStatus": "NOT-PAID",

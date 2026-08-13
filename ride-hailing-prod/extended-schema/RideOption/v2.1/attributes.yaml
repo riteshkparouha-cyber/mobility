@@ -341,4 +341,3 @@ components:
           description: Human-readable booking reference shown to the customer. Maps
             to V1 items[].tags[BOOKING_INFO].DISPLAY_BOOKING_ID.
           type: string
-      additionalProperties: false

@@ -145,4 +145,3 @@ components:
                       type: boolean
                     value:
                       type: string
-      additionalProperties: false

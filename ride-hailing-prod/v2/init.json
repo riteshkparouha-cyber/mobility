@@ -12,11 +12,11 @@
     "timestamp": "2026-08-07T12:22:20.47Z",
     "ttl": "PT2M",
     "schemaContext": [
-      "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
-      "https://schema.beckn.io/RideOption/2.1/context.jsonld",
-      "https://schema.beckn.io/ServiceClass/2.1/context.jsonld",
-      "https://schema.beckn.io/Passenger/2.0/context.jsonld",
-      "https://schema.beckn.io/SettlementTerm/2.1/context.jsonld"
+      "https://schema.beckn.io/TripRequest/v2.2/context.jsonld",
+      "https://schema.beckn.io/RideOption/v2.1/context.jsonld",
+      "https://schema.beckn.io/ServiceClass/v2.1/context.jsonld",
+      "https://schema.beckn.io/Passenger/v2.1/context.jsonld",
+      "https://schema.beckn.io/SettlementTerm/v2.1/context.jsonld"
     ]
   },
   "message": {
@@ -34,7 +34,7 @@
             "id": "254e80b6-6914-4cdb-a5f7-9971a013b8dc",
             "resourceIds": ["254e80b6-6914-4cdb-a5f7-9971a013b8dc"],
             "offerAttributes": {
-              "@context": "https://schema.beckn.io/RideOption/2.1/context.jsonld",
+              "@context": "https://schema.beckn.io/RideOption/v2.1/context.jsonld",
               "@type": "RideOption",
               "vehicleType": {
                 "vehicleCategoryCode": "FOUR_WHEELER"
@@ -110,7 +110,7 @@
               "descriptor": {"name": "Aura", "code": "BLACK", "shortDesc": "Luxury"},
               "quantity": {"value": 1, "unit": "trip"},
               "resourceAttributes": {
-                "@context": "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
+                "@context": "https://schema.beckn.io/TripRequest/v2.2/context.jsonld",
                 "@type": "TripRequest",
                 "origin": {
                   "geo": {
@@ -188,7 +188,7 @@
             }
           ],
           "commitmentAttributes": {
-            "@context": "https://schema.beckn.io/ServiceClass/2.1/context.jsonld",
+            "@context": "https://schema.beckn.io/ServiceClass/v2.1/context.jsonld",
             "@type": "ServiceClass",
             "serviceClassCode": "BLACK",
             "isAirConditioned": true,
@@ -216,7 +216,7 @@
           "id": "consumer-001",
           "descriptor": {"name": "gopal_lynx"},
           "participantAttributes": {
-            "@context": "https://schema.beckn.io/Passenger/2.0/context.jsonld",
+            "@context": "https://schema.beckn.io/Passenger/v2.1/context.jsonld",
             "@type": "Passenger",
             "person": {
               "name": "gopal_lynx",
@@ -237,7 +237,7 @@
           "id": "6330f490-e317-4cf7-953b-6915fa2ad8e4",
           "status": "DRAFT",
           "settlementAttributes": {
-            "@context": "https://schema.beckn.io/SettlementTerm/2.1/context.jsonld",
+            "@context": "https://schema.beckn.io/SettlementTerm/v2.1/context.jsonld",
             "@type": "SettlementTerm",
             "collectedBy": "BPP",
             "paymentStatus": "NOT-PAID",

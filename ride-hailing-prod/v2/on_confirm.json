@@ -12,14 +12,14 @@
     "timestamp": "2026-08-07T12:22:20.818Z",
     "ttl": "PT2M",
     "schemaContext": [
-      "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
-      "https://schema.beckn.io/RideOption/2.1/context.jsonld",
-      "https://schema.beckn.io/FareEstimate/2.1/context.jsonld",
-      "https://schema.beckn.io/PriceSpecification/2.2/context.jsonld",
+      "https://schema.beckn.io/TripRequest/v2.2/context.jsonld",
+      "https://schema.beckn.io/RideOption/v2.1/context.jsonld",
+      "https://schema.beckn.io/FareEstimate/v2.1/context.jsonld",
+      "https://schema.beckn.io/PriceSpecification/v2.2/context.jsonld",
       "https://schema.beckn.io/PriceComponent/2.2/context.jsonld",
-      "https://schema.beckn.io/Driver/2.1/context.jsonld",
-      "https://schema.beckn.io/Passenger/2.0/context.jsonld",
-      "https://schema.beckn.io/SettlementTerm/2.1/context.jsonld"
+      "https://schema.beckn.io/Driver/v2.1/context.jsonld",
+      "https://schema.beckn.io/Passenger/v2.1/context.jsonld",
+      "https://schema.beckn.io/SettlementTerm/v2.1/context.jsonld"
     ]
   },
   "message": {
@@ -50,7 +50,7 @@
               "descriptor": {"name": "Aura", "code": "BLACK", "shortDesc": "Luxury"},
               "quantity": {"value": 1, "unit": "trip"},
               "resourceAttributes": {
-                "@context": "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
+                "@context": "https://schema.beckn.io/TripRequest/v2.2/context.jsonld",
                 "@type": "TripRequest",
                 "origin": {
                   "geo": {
@@ -116,7 +116,7 @@
             "descriptor": {"code": "RIDE", "name": "BLACK", "shortDesc": "BLACK"},
             "resourceIds": ["254e80b6-6914-4cdb-a5f7-9971a013b8dc"],
             "offerAttributes": {
-              "@context": "https://schema.beckn.io/RideOption/2.1/context.jsonld",
+              "@context": "https://schema.beckn.io/RideOption/v2.1/context.jsonld",
               "@type": "RideOption",
               "categoryIds": ["ON_DEMAND_TRIP"],
               "fulfillmentIds": ["779329dc-c281-4116-a7de-a40f7a3f2ad5"],
@@ -208,12 +208,12 @@
             "name": "Confirmed fare"
           },
           "considerationAttributes": {
-            "@context": "https://schema.beckn.io/FareEstimate/2.1/context.jsonld",
+            "@context": "https://schema.beckn.io/FareEstimate/v2.1/context.jsonld",
             "@type": "FareEstimate",
             "currency": "EUR",
             "offeredAmount": 9.125399999999999,
             "price": {
-              "@context": "https://schema.beckn.io/PriceSpecification/2.2/context.jsonld",
+              "@context": "https://schema.beckn.io/PriceSpecification/v2.2/context.jsonld",
               "@type": "PriceSpecification",
               "currency": "EUR",
               "value": 9.125399999999999,
@@ -246,7 +246,7 @@
           },
           "commitmentIds": ["commitment-1"],
           "performanceAttributes": {
-            "@context": "https://schema.beckn.io/Driver/2.1/context.jsonld",
+            "@context": "https://schema.beckn.io/Driver/v2.1/context.jsonld",
             "@type": "Driver",
             "person": {
               "name": "DhruvBG Singh",
@@ -318,7 +318,7 @@
           "id": "consumer-001",
           "descriptor": {"name": "gopal_lynx"},
           "participantAttributes": {
-            "@context": "https://schema.beckn.io/Passenger/2.0/context.jsonld",
+            "@context": "https://schema.beckn.io/Passenger/v2.1/context.jsonld",
             "@type": "Passenger",
             "person": {
               "name": "gopal_lynx",
@@ -337,7 +337,7 @@
           "considerationId": "consideration-1",
           "status": "ACTIVE",
           "settlementAttributes": {
-            "@context": "https://schema.beckn.io/SettlementTerm/2.1/context.jsonld",
+            "@context": "https://schema.beckn.io/SettlementTerm/v2.1/context.jsonld",
             "@type": "SettlementTerm",
             "collectedBy": "BPP",
             "paymentStatus": "NOT-PAID",

@@ -12,10 +12,10 @@
     "timestamp": "2026-08-07T12:19:52.226Z",
     "ttl": "PT30M",
     "schemaContext": [
-      "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
-      "https://schema.beckn.io/RideOption/2.1/context.jsonld",
-      "https://schema.beckn.io/FareEstimate/2.1/context.jsonld",
-      "https://schema.beckn.io/SettlementTerm/2.1/context.jsonld"
+      "https://schema.beckn.io/TripRequest/v2.0/context.jsonld",
+      "https://schema.beckn.io/RideOption/v2.1/context.jsonld",
+      "https://schema.beckn.io/FareEstimate/v2.1/context.jsonld",
+      "https://schema.beckn.io/SettlementTerm/v2.1/context.jsonld"
     ]
   },
   "message": {
@@ -41,7 +41,7 @@
           ],
           "locations": [],
           "providerAttributes": {
-            "@context": "https://schema.beckn.io/SettlementTerm/2.1/context.jsonld",
+            "@context": "https://schema.beckn.io/SettlementTerm/v2.1/context.jsonld",
             "@type": "SettlementTerm",
             "collectedBy": "BPP",
             "paymentStatus": "NOT-PAID",
@@ -86,7 +86,7 @@
             },
             "quantity": {"value": 1, "unit": "trip"},
             "resourceAttributes": {
-              "@context": "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
+              "@context": "https://schema.beckn.io/TripRequest/v2.0/context.jsonld",
               "@type": "TripRequest",
               "modes": "ON_DEMAND_TRIP",
               "departureTime": "2026-08-07T12:19:51.910103632Z",
@@ -113,7 +113,7 @@
             },
             "quantity": {"value": 1, "unit": "trip"},
             "resourceAttributes": {
-              "@context": "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
+              "@context": "https://schema.beckn.io/TripRequest/v2.0/context.jsonld",
               "@type": "TripRequest",
               "modes": "ON_DEMAND_TRIP",
               "departureTime": "2026-08-07T12:19:51.910103632Z",
@@ -140,7 +140,7 @@
             },
             "quantity": {"value": 1, "unit": "trip"},
             "resourceAttributes": {
-              "@context": "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
+              "@context": "https://schema.beckn.io/TripRequest/v2.0/context.jsonld",
               "@type": "TripRequest",
               "modes": "ON_DEMAND_TRIP",
               "departureTime": "2026-08-07T12:19:51.910103632Z",
@@ -167,7 +167,7 @@
             },
             "quantity": {"value": 1, "unit": "trip"},
             "resourceAttributes": {
-              "@context": "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
+              "@context": "https://schema.beckn.io/TripRequest/v2.0/context.jsonld",
               "@type": "TripRequest",
               "modes": "ON_DEMAND_TRIP",
               "departureTime": "2026-08-07T12:19:51.910103632Z",
@@ -194,7 +194,7 @@
             },
             "quantity": {"value": 1, "unit": "trip"},
             "resourceAttributes": {
-              "@context": "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
+              "@context": "https://schema.beckn.io/TripRequest/v2.0/context.jsonld",
               "@type": "TripRequest",
               "modes": "ON_DEMAND_TRIP",
               "departureTime": "2026-08-07T12:19:51.910103632Z",
@@ -223,7 +223,7 @@
             },
             "resourceIds": ["5a46f4da-2eb6-4ef6-923c-3d06fa8c1d5b"],
             "offerAttributes": {
-              "@context": "https://schema.beckn.io/RideOption/2.1/context.jsonld",
+              "@context": "https://schema.beckn.io/RideOption/v2.1/context.jsonld",
               "@type": "RideOption",
               "categoryIds": ["ON_DEMAND_TRIP"],
               "vehicleType": {
@@ -369,7 +369,7 @@
                 "id": "con-5a46f4da-2eb6-4ef6-923c-3d06fa8c1d5b",
                 "status": {"code": "PRICE_ESTIMATE", "name": "Fare estimate"},
                 "considerationAttributes": {
-                  "@context": "https://schema.beckn.io/FareEstimate/2.1/context.jsonld",
+                  "@context": "https://schema.beckn.io/FareEstimate/v2.1/context.jsonld",
                   "@type": "FareEstimate",
                   "currency": "EUR",
                   "estimatedAmount": 7.82,
@@ -389,7 +389,7 @@
             },
             "resourceIds": ["523add84-50f9-4993-87db-33ea46188359"],
             "offerAttributes": {
-              "@context": "https://schema.beckn.io/RideOption/2.1/context.jsonld",
+              "@context": "https://schema.beckn.io/RideOption/v2.1/context.jsonld",
               "@type": "RideOption",
               "categoryIds": ["ON_DEMAND_TRIP"],
               "vehicleType": {
@@ -535,7 +535,7 @@
                 "id": "con-523add84-50f9-4993-87db-33ea46188359",
                 "status": {"code": "PRICE_ESTIMATE", "name": "Fare estimate"},
                 "considerationAttributes": {
-                  "@context": "https://schema.beckn.io/FareEstimate/2.1/context.jsonld",
+                  "@context": "https://schema.beckn.io/FareEstimate/v2.1/context.jsonld",
                   "@type": "FareEstimate",
                   "currency": "EUR",
                   "estimatedAmount": 7.49,
@@ -555,7 +555,7 @@
             },
             "resourceIds": ["acd8fb04-7bed-473f-b840-46de827c361f"],
             "offerAttributes": {
-              "@context": "https://schema.beckn.io/RideOption/2.1/context.jsonld",
+              "@context": "https://schema.beckn.io/RideOption/v2.1/context.jsonld",
               "@type": "RideOption",
               "categoryIds": ["ON_DEMAND_TRIP"],
               "vehicleType": {
@@ -691,7 +691,7 @@
                 "id": "con-acd8fb04-7bed-473f-b840-46de827c361f",
                 "status": {"code": "PRICE_ESTIMATE", "name": "Fare estimate"},
                 "considerationAttributes": {
-                  "@context": "https://schema.beckn.io/FareEstimate/2.1/context.jsonld",
+                  "@context": "https://schema.beckn.io/FareEstimate/v2.1/context.jsonld",
                   "@type": "FareEstimate",
                   "currency": "EUR",
                   "estimatedAmount": 6.51,
@@ -711,7 +711,7 @@
             },
             "resourceIds": ["254e80b6-6914-4cdb-a5f7-9971a013b8dc"],
             "offerAttributes": {
-              "@context": "https://schema.beckn.io/RideOption/2.1/context.jsonld",
+              "@context": "https://schema.beckn.io/RideOption/v2.1/context.jsonld",
               "@type": "RideOption",
               "categoryIds": ["ON_DEMAND_TRIP"],
               "vehicleType": {
@@ -857,7 +857,7 @@
                 "id": "con-254e80b6-6914-4cdb-a5f7-9971a013b8dc",
                 "status": {"code": "PRICE_ESTIMATE", "name": "Fare estimate"},
                 "considerationAttributes": {
-                  "@context": "https://schema.beckn.io/FareEstimate/2.1/context.jsonld",
+                  "@context": "https://schema.beckn.io/FareEstimate/v2.1/context.jsonld",
                   "@type": "FareEstimate",
                   "currency": "EUR",
                   "estimatedAmount": 9.13,
@@ -877,7 +877,7 @@
             },
             "resourceIds": ["44ef6d72-3d2e-4098-8969-76fc88efb7d1"],
             "offerAttributes": {
-              "@context": "https://schema.beckn.io/RideOption/2.1/context.jsonld",
+              "@context": "https://schema.beckn.io/RideOption/v2.1/context.jsonld",
               "@type": "RideOption",
               "categoryIds": ["ON_DEMAND_TRIP"],
               "vehicleType": {
@@ -1023,7 +1023,7 @@
                 "id": "con-44ef6d72-3d2e-4098-8969-76fc88efb7d1",
                 "status": {"code": "PRICE_ESTIMATE", "name": "Fare estimate"},
                 "considerationAttributes": {
-                  "@context": "https://schema.beckn.io/FareEstimate/2.1/context.jsonld",
+                  "@context": "https://schema.beckn.io/FareEstimate/v2.1/context.jsonld",
                   "@type": "FareEstimate",
                   "currency": "EUR",
                   "estimatedAmount": 15.82,
