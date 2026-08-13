@@ -30,6 +30,16 @@
           "descriptor": {
             "name": "Bridge Finland Partner"
           },
+          "categories": [
+            {
+              "id": "ON_DEMAND_TRIP",
+              "descriptor": {
+                "code": "ON_DEMAND_TRIP",
+                "name": "ON_DEMAND_TRIP"
+              }
+            }
+          ],
+          "locations": [],
           "providerAttributes": {
             "@context": "https://schema.beckn.io/SettlementTerm/2.1/context.jsonld",
             "@type": "SettlementTerm",
@@ -68,11 +78,121 @@
         },
         "resources": [
           {
-            "id": "res-trip-fin-01",
-            "quantity": {
-              "value": 1,
-              "unit": "trip"
+            "id": "5a46f4da-2eb6-4ef6-923c-3d06fa8c1d5b",
+            "descriptor": {
+              "name": "Comfort",
+              "code": "COMFY",
+              "shortDesc": "Full size"
             },
+            "quantity": {"value": 1, "unit": "trip"},
+            "resourceAttributes": {
+              "@context": "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
+              "@type": "TripRequest",
+              "modes": "ON_DEMAND_TRIP",
+              "departureTime": "2026-08-07T12:19:51.910103632Z",
+              "origin": {
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [24.931445, 60.167387]
+                }
+              },
+              "destination": {
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [24.943359, 60.166848]
+                }
+              }
+            }
+          },
+          {
+            "id": "523add84-50f9-4993-87db-33ea46188359",
+            "descriptor": {
+              "name": "Electric",
+              "code": "ECO",
+              "shortDesc": "Green"
+            },
+            "quantity": {"value": 1, "unit": "trip"},
+            "resourceAttributes": {
+              "@context": "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
+              "@type": "TripRequest",
+              "modes": "ON_DEMAND_TRIP",
+              "departureTime": "2026-08-07T12:19:51.910103632Z",
+              "origin": {
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [24.931445, 60.167387]
+                }
+              },
+              "destination": {
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [24.943359, 60.166848]
+                }
+              }
+            }
+          },
+          {
+            "id": "acd8fb04-7bed-473f-b840-46de827c361f",
+            "descriptor": {
+              "name": "Lynx",
+              "code": "TAXI",
+              "shortDesc": "Affordable ride"
+            },
+            "quantity": {"value": 1, "unit": "trip"},
+            "resourceAttributes": {
+              "@context": "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
+              "@type": "TripRequest",
+              "modes": "ON_DEMAND_TRIP",
+              "departureTime": "2026-08-07T12:19:51.910103632Z",
+              "origin": {
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [24.931445, 60.167387]
+                }
+              },
+              "destination": {
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [24.943359, 60.166848]
+                }
+              }
+            }
+          },
+          {
+            "id": "254e80b6-6914-4cdb-a5f7-9971a013b8dc",
+            "descriptor": {
+              "name": "Aura",
+              "code": "BLACK",
+              "shortDesc": "Luxury"
+            },
+            "quantity": {"value": 1, "unit": "trip"},
+            "resourceAttributes": {
+              "@context": "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
+              "@type": "TripRequest",
+              "modes": "ON_DEMAND_TRIP",
+              "departureTime": "2026-08-07T12:19:51.910103632Z",
+              "origin": {
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [24.931445, 60.167387]
+                }
+              },
+              "destination": {
+                "geo": {
+                  "type": "Point",
+                  "coordinates": [24.943359, 60.166848]
+                }
+              }
+            }
+          },
+          {
+            "id": "44ef6d72-3d2e-4098-8969-76fc88efb7d1",
+            "descriptor": {
+              "name": "XL",
+              "code": "SUV_PLUS",
+              "shortDesc": "Extra space"
+            },
+            "quantity": {"value": 1, "unit": "trip"},
             "resourceAttributes": {
               "@context": "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
               "@type": "TripRequest",
@@ -101,10 +221,11 @@
               "code": "COMFY",
               "shortDesc": "Full size"
             },
-            "resourceIds": ["res-trip-fin-01"],
+            "resourceIds": ["5a46f4da-2eb6-4ef6-923c-3d06fa8c1d5b"],
             "offerAttributes": {
               "@context": "https://schema.beckn.io/RideOption/2.1/context.jsonld",
               "@type": "RideOption",
+              "categoryIds": ["ON_DEMAND_TRIP"],
               "vehicleType": {
                 "vehicleCategoryCode": "FOUR_WHEELER"
               },
@@ -266,10 +387,11 @@
               "code": "ECO",
               "shortDesc": "Green"
             },
-            "resourceIds": ["res-trip-fin-01"],
+            "resourceIds": ["523add84-50f9-4993-87db-33ea46188359"],
             "offerAttributes": {
               "@context": "https://schema.beckn.io/RideOption/2.1/context.jsonld",
               "@type": "RideOption",
+              "categoryIds": ["ON_DEMAND_TRIP"],
               "vehicleType": {
                 "vehicleCategoryCode": "FOUR_WHEELER"
               },
@@ -431,10 +553,11 @@
               "code": "TAXI",
               "shortDesc": "Affordable ride"
             },
-            "resourceIds": ["res-trip-fin-01"],
+            "resourceIds": ["acd8fb04-7bed-473f-b840-46de827c361f"],
             "offerAttributes": {
               "@context": "https://schema.beckn.io/RideOption/2.1/context.jsonld",
               "@type": "RideOption",
+              "categoryIds": ["ON_DEMAND_TRIP"],
               "vehicleType": {
                 "vehicleCategoryCode": "FOUR_WHEELER"
               },
@@ -586,10 +709,11 @@
               "code": "BLACK",
               "shortDesc": "Luxury"
             },
-            "resourceIds": ["res-trip-fin-01"],
+            "resourceIds": ["254e80b6-6914-4cdb-a5f7-9971a013b8dc"],
             "offerAttributes": {
               "@context": "https://schema.beckn.io/RideOption/2.1/context.jsonld",
               "@type": "RideOption",
+              "categoryIds": ["ON_DEMAND_TRIP"],
               "vehicleType": {
                 "vehicleCategoryCode": "FOUR_WHEELER"
               },
@@ -751,10 +875,11 @@
               "code": "SUV_PLUS",
               "shortDesc": "Extra space"
             },
-            "resourceIds": ["res-trip-fin-01"],
+            "resourceIds": ["44ef6d72-3d2e-4098-8969-76fc88efb7d1"],
             "offerAttributes": {
               "@context": "https://schema.beckn.io/RideOption/2.1/context.jsonld",
               "@type": "RideOption",
+              "categoryIds": ["ON_DEMAND_TRIP"],
               "vehicleType": {
                 "vehicleCategoryCode": "FOUR_WHEELER"
               },

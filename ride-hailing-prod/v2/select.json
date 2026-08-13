@@ -12,7 +12,7 @@
     "timestamp": "2026-08-07T12:19:59.022Z",
     "ttl": "PT2M",
     "schemaContext": [
-      "https://schema.beckn.io/TripRequest/2.1/context.jsonld",
+      "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
       "https://schema.beckn.io/ServiceClass/2.1/context.jsonld",
       "https://schema.beckn.io/Passenger/2.0/context.jsonld",
       "https://schema.beckn.io/SettlementTerm/2.1/context.jsonld"
@@ -29,14 +29,15 @@
           },
           "offer": {
             "id": "5a46f4da-2eb6-4ef6-923c-3d06fa8c1d5b",
-            "resourceIds": ["res-trip-01"]
+            "resourceIds": ["5a46f4da-2eb6-4ef6-923c-3d06fa8c1d5b"]
           },
           "resources": [
             {
-              "id": "res-trip-01",
+              "id": "5a46f4da-2eb6-4ef6-923c-3d06fa8c1d5b",
+              "descriptor": {"name": "Comfort", "code": "COMFY", "shortDesc": "Full size"},
               "quantity": {"value": 1, "unit": "trip"},
               "resourceAttributes": {
-                "@context": "https://schema.beckn.io/TripRequest/2.1/context.jsonld",
+                "@context": "https://schema.beckn.io/TripRequest/2.0/context.jsonld",
                 "@type": "TripRequest",
                 "origin": {
                   "geo": {
