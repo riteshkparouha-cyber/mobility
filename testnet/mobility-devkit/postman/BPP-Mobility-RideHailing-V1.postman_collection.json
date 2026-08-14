@@ -1,9 +1,10 @@
 {
   "info": {
-    "_postman_id": "04321770-828f-4cd2-b804-6028e335f6d1",
+    "_postman_id": "6ab1b654-32be-40e8-aca9-d864e909fe33",
     "name": "BPP — Beckn Mobility Ride-Hailing V1 (Legacy)",
     "description": "V1 (Beckn 2.1.0) ride-hailing payloads from ride-hailing-prod/. BPP callbacks go to bpp/caller so the reqmapper plugin converts them V1→V2 before delivery to the BAP. BAP requests go to bap/caller (requires BAP-side mapper when configured).",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "45164071"
   },
   "item": [
     {
