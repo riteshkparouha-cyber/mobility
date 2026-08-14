@@ -82,8 +82,7 @@ mappings:
       (
         $ctx      := $.context;
         $catalogs := $.message.catalogs;
-        $parts    := $split($ctx.networkId, ":");
-        $domain   := $parts[0] & ":" & $parts[1];
+        $domain   := $ctx.networkId;
 
         $coordsToGps := function($coords) {
           $string($coords[1]) & ", " & $string($coords[0])
@@ -614,8 +613,7 @@ mappings:
       (
         $ctx      := $.context;
         $contract := $.message.contract;
-        $parts    := $split($ctx.networkId, ":");
-        $domain   := $parts[0] & ":" & $parts[1];
+        $domain   := $ctx.networkId;
         $commit   := $contract.commitments[0];
         $res      := $commit.resources[0];
         $rAttr    := $res.resourceAttributes;
@@ -687,8 +685,7 @@ mappings:
       (
         $ctx      := $.context;
         $contract := $.message.contract;
-        $parts    := $split($ctx.networkId, ":");
-        $domain   := $parts[0] & ":" & $parts[1];
+        $domain   := $ctx.networkId;
         $commit   := $contract.commitments[0];
         $res      := $commit.resources[0];
         $offer    := $commit.offer;
@@ -1215,8 +1212,7 @@ mappings:
       (
         $ctx      := $.context;
         $contract := $.message.contract;
-        $parts    := $split($ctx.networkId, ":");
-        $domain   := $parts[0] & ":" & $parts[1];
+        $domain   := $ctx.networkId;
         $commit   := $contract.commitments[0];
         $res      := $commit.resources[0];
         $rAttr    := $res.resourceAttributes;
@@ -1298,8 +1294,7 @@ mappings:
       (
         $ctx      := $.context;
         $contract := $.message.contract;
-        $parts    := $split($ctx.networkId, ":");
-        $domain   := $parts[0] & ":" & $parts[1];
+        $domain   := $ctx.networkId;
         $commit   := $contract.commitments[0];
         $res      := $commit.resources[0];
         $rAttr    := $res.resourceAttributes;
@@ -1885,8 +1880,7 @@ mappings:
       (
         $ctx      := $.context;
         $contract := $.message.contract;
-        $parts    := $split($ctx.networkId, ":");
-        $domain   := $parts[0] & ":" & $parts[1];
+        $domain   := $ctx.networkId;
         $commit   := $contract.commitments[0];
         $res      := $commit.resources[0];
         $rAttr    := $res.resourceAttributes;
@@ -1981,8 +1975,7 @@ mappings:
       (
         $ctx      := $.context;
         $contract := $.message.contract;
-        $parts    := $split($ctx.networkId, ":");
-        $domain   := $parts[0] & ":" & $parts[1];
+        $domain   := $ctx.networkId;
         $commit   := $contract.commitments[0];
         $res      := $commit.resources[0];
         $rAttr    := $res.resourceAttributes;
@@ -2379,8 +2372,7 @@ mappings:
       (
         $ctx      := $.context;
         $contract := $.message.contract;
-        $parts    := $split($ctx.networkId, ":");
-        $domain   := $parts[0] & ":" & $parts[1];
+        $domain   := $ctx.networkId;
         $commit   := $contract.commitments[0];
         $res      := $commit.resources[0];
         $rAttr    := $res.resourceAttributes;
