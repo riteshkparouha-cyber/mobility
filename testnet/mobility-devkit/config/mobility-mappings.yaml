@@ -427,7 +427,7 @@ mappings:
             "networkId": $ctx.domain,
             "bapId": $ctx.bap_id,
             "bapUri": $ctx.bap_uri,
-            "bppId": ($provider.id ? $provider.id : $ctx.bpp_id),
+            "bppId": $ctx.bpp_id,
             "bppUri": $ctx.bpp_uri,
             "transactionId": $ctx.transaction_id,
             "messageId": $ctx.message_id,
@@ -490,7 +490,7 @@ mappings:
             "networkId": $ctx.domain,
             "bapId": $ctx.bap_id,
             "bapUri": $ctx.bap_uri,
-            "bppId": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id),
+            "bppId": $ctx.bpp_id,
             "bppUri": $ctx.bpp_uri,
             "transactionId": $ctx.transaction_id,
             "messageId": $ctx.message_id,
@@ -563,17 +563,20 @@ mappings:
                   "airConditioningScore": 2.0
                 }
               }],
-              "participants": [{
-                "id": "consumer-001",
-                "participantAttributes": {
-                  "@context": $passCtx,
-                  "@type": "Passenger",
-                  "person": {
-                    "id": $ful.customer.contact.phone,
-                    "telephone": $ful.customer.contact.phone
+              "participants": [
+                {
+                  "id": "consumer-001",
+                  "participantAttributes": {
+                    "@context": $passCtx,
+                    "@type": "Passenger",
+                    "person": {
+                      "id": $ful.customer.contact.phone,
+                      "telephone": $ful.customer.contact.phone
+                    }
                   }
-                }
-              }],
+                },
+                { "id": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id), "role": "PROVIDER" }
+              ],
               "settlements": $pay ? [{
                 "id": "settlement-1",
                 "status": "DRAFT",
@@ -613,6 +616,8 @@ mappings:
         $res      := $commit.resources[0];
         $rAttr    := $res.resourceAttributes;
         $pax      := $contract.participants[participantAttributes."@type" = "Passenger"][0];
+        $providerPart := $contract.participants[role = "PROVIDER"][0];
+        $bppPart  := $contract.participants[role = "BPP"][0];
         $settle   := $contract.settlements[0];
         $sAttr    := $settle.settlementAttributes;
 
@@ -632,7 +637,7 @@ mappings:
           },
           "message": {
             "order": {
-              "provider": { "id": $ctx.bppId },
+              "provider": { "id": ($providerPart.id ? $providerPart.id : ($bppPart.id ? $bppPart.id : $ctx.bppId)) },
               "items": [{
                 "id": $commit.offer.id,
                 "price": $rAttr.confirmedPrice,
@@ -690,6 +695,8 @@ mappings:
         $settle   := $contract.settlements[0];
         $sAttr    := $settle.settlementAttributes;
         $ca       := $contract.consideration[0].considerationAttributes;
+        $providerPart := $contract.participants[role = "PROVIDER"][0];
+        $bppPart  := $contract.participants[role = "BPP"][0];
 
         {
           "context": {
@@ -707,7 +714,7 @@ mappings:
           },
           "message": {
             "order": {
-              "provider": { "id": $ctx.bppId },
+              "provider": { "id": ($providerPart.id ? $providerPart.id : ($bppPart.id ? $bppPart.id : $ctx.bppId)) },
               "items": [$merge([
                 {
                   "id": $offer.id,
@@ -820,7 +827,7 @@ mappings:
             "networkId": $ctx.domain,
             "bapId": $ctx.bap_id,
             "bapUri": $ctx.bap_uri,
-            "bppId": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id),
+            "bppId": $ctx.bpp_id,
             "bppUri": $ctx.bpp_uri,
             "transactionId": $ctx.transaction_id,
             "messageId": $ctx.message_id,
@@ -979,6 +986,9 @@ mappings:
                   "tags": $ful.agent.person.tags
                 }
               }],
+              "participants": [
+                { "id": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id), "role": "PROVIDER" }
+              ],
               "settlements": [{
                 "id": "settlement-1",
                 "status": "DRAFT",
@@ -1048,7 +1058,7 @@ mappings:
             "networkId": $ctx.domain,
             "bapId": $ctx.bap_id,
             "bapUri": $ctx.bap_uri,
-            "bppId": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id),
+            "bppId": $ctx.bpp_id,
             "bppUri": $ctx.bpp_uri,
             "transactionId": $ctx.transaction_id,
             "messageId": $ctx.message_id,
@@ -1167,7 +1177,7 @@ mappings:
                     }
                   } : {}
                 ]),
-                { "id": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id), "role": "BPP" }
+                { "id": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id), "role": "PROVIDER" }
               ],
               "settlements": $pay ? [{
                 "id": $pay.id ? $pay.id : "6330f490-e317-4cf7-953b-6915fa2ad8e4",
@@ -1210,6 +1220,7 @@ mappings:
         $pAttr    := $perf.performanceAttributes;
         $pax      := $contract.participants[participantAttributes."@type" = "Passenger"][0];
         $paxAttr  := $pax.participantAttributes;
+        $providerPart := $contract.participants[role = "PROVIDER"][0];
         $bppPart  := $contract.participants[role = "BPP"][0];
         $settle   := $contract.settlements[0];
         $sAttr    := $settle.settlementAttributes;
@@ -1231,7 +1242,7 @@ mappings:
           "message": {
             "order": {
               "created_at": $ca.createdAt,
-              "provider": { "id": $bppPart.id },
+              "provider": { "id": ($providerPart.id ? $providerPart.id : ($bppPart.id ? $bppPart.id : $ctx.bppId)) },
               "items": [{
                 "id": $commit.offer.id,
                 "fulfillment_ids": $commit.offer.offerAttributes.fulfillmentIds,
@@ -1291,6 +1302,7 @@ mappings:
         $oAttr    := $commit.offer.offerAttributes;
         $perf     := $contract.performance[0];
         $pAttr    := $perf.performanceAttributes;
+        $providerPart := $contract.participants[role = "PROVIDER"][0];
         $bppPart  := $contract.participants[role = "BPP"][0];
         $settle   := $contract.settlements[0];
         $sAttr    := $settle.settlementAttributes;
@@ -1314,7 +1326,7 @@ mappings:
             "order": {
               "id": $contract.id,
               "created_at": $ca.createdAt,
-              "provider": { "id": $bppPart.id },
+              "provider": { "id": ($providerPart.id ? $providerPart.id : ($bppPart.id ? $bppPart.id : $ctx.bppId)) },
               "items": [$merge([
                 {
                   "id": $commit.offer.id,
@@ -1445,7 +1457,7 @@ mappings:
             "networkId": $ctx.domain,
             "bapId": $ctx.bap_id,
             "bapUri": $ctx.bap_uri,
-            "bppId": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id),
+            "bppId": $ctx.bpp_id,
             "bppUri": $ctx.bpp_uri,
             "transactionId": $ctx.transaction_id,
             "messageId": $ctx.message_id,
@@ -1609,7 +1621,7 @@ mappings:
                     }
                   } : {}
                 ]),
-                { "id": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id), "role": "BPP" }
+                { "id": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id), "role": "PROVIDER" }
               ],
               "settlements": $pay ? [{
                 "id": $pay.id,
@@ -1714,7 +1726,7 @@ mappings:
             "networkId": $ctx.domain,
             "bapId": $ctx.bap_id,
             "bapUri": $ctx.bap_uri,
-            "bppId": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id),
+            "bppId": $ctx.bpp_id,
             "bppUri": $ctx.bpp_uri,
             "transactionId": $ctx.transaction_id,
             "messageId": $ctx.message_id,
@@ -1833,7 +1845,7 @@ mappings:
                     }
                   }
                 ]),
-                { "id": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id), "role": "BPP" }
+                { "id": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id), "role": "PROVIDER" }
               ],
               "settlements": $pay ? [{
                 "id": $pay.id ? $pay.id : "settlement-1",
@@ -1878,6 +1890,7 @@ mappings:
         $pAttr    := $perf.performanceAttributes;
         $pax      := $contract.participants[participantAttributes."@type" = "Passenger"][0];
         $paxAttr  := $pax.participantAttributes;
+        $providerPart := $contract.participants[role = "PROVIDER"][0];
         $bppPart  := $contract.participants[role = "BPP"][0];
         $settle   := $contract.settlements[0];
         $sAttr    := $settle.settlementAttributes;
@@ -1900,7 +1913,7 @@ mappings:
           "message": {
             "order": {
               "id": $contract.id,
-              "provider": { "id": $bppPart.id },
+              "provider": { "id": ($providerPart.id ? $providerPart.id : ($bppPart.id ? $bppPart.id : $ctx.bppId)) },
               "items": [$merge([
                 {
                   "id": $commit.offer.id
@@ -1972,6 +1985,7 @@ mappings:
         $oAttr    := $commit.offer.offerAttributes;
         $perf     := $contract.performance[0];
         $pAttr    := $perf.performanceAttributes;
+        $providerPart := $contract.participants[role = "PROVIDER"][0];
         $bppPart  := $contract.participants[role = "BPP"][0];
         $settle   := $contract.settlements[0];
         $sAttr    := $settle.settlementAttributes;
@@ -1995,7 +2009,7 @@ mappings:
             "order": {
               "id": $contract.id,
               "created_at": $ca.createdAt,
-              "provider": { "id": $bppPart.id },
+              "provider": { "id": ($providerPart.id ? $providerPart.id : ($bppPart.id ? $bppPart.id : $ctx.bppId)) },
               "items": [$merge([
                 {
                   "id": $res.id,
@@ -2131,7 +2145,7 @@ mappings:
             "networkId": $ctx.domain,
             "bapId": $ctx.bap_id,
             "bapUri": $ctx.bap_uri,
-            "bppId": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id),
+            "bppId": $ctx.bpp_id,
             "bppUri": $ctx.bpp_uri,
             "transactionId": $ctx.transaction_id,
             "messageId": $ctx.message_id,
@@ -2296,7 +2310,7 @@ mappings:
                     }
                   } : {}
                 ]),
-                { "id": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id), "role": "BPP" }
+                { "id": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id), "role": "PROVIDER" }
               ],
               "settlements": $pay ? [{
                 "id": $pay.id,
@@ -2369,6 +2383,7 @@ mappings:
         $oAttr    := $commit.offer.offerAttributes;
         $perf     := $contract.performance[0];
         $pAttr    := $perf.performanceAttributes;
+        $providerPart := $contract.participants[role = "PROVIDER"][0];
         $bppPart  := $contract.participants[role = "BPP"][0];
         $settle   := $contract.settlements[0];
         $sAttr    := $settle.settlementAttributes;
@@ -2392,7 +2407,7 @@ mappings:
             "order": {
               "id": $contract.id,
               "created_at": $ca.createdAt,
-              "provider": { "id": $bppPart.id },
+              "provider": { "id": ($providerPart.id ? $providerPart.id : ($bppPart.id ? $bppPart.id : $ctx.bppId)) },
               "items": [$merge([
                 {
                   "id": $commit.offer.id,
@@ -2527,7 +2542,7 @@ mappings:
             "networkId": $ctx.domain,
             "bapId": $ctx.bap_id,
             "bapUri": $ctx.bap_uri,
-            "bppId": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id),
+            "bppId": $ctx.bpp_id,
             "bppUri": $ctx.bpp_uri,
             "transactionId": $ctx.transaction_id,
             "messageId": $ctx.message_id,
@@ -2691,7 +2706,7 @@ mappings:
                     "person": { "id": $cust.person.name, "name": $cust.person.name, "telephone": $cust.contact.phone }
                   }
                 },
-                { "id": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id), "role": "BPP" }
+                { "id": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id), "role": "PROVIDER" }
               ],
               "settlements": $pay ? [{
                 "id": $pay.id,
