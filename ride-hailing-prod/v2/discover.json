@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "bapId": "api.eu.moving.tech/bap/beckn/v1/b9e1d4f6-7c2a-4e8b-9d3f-5a6b7c8d9e0f",
     "bapUri": "https://api.eu.moving.tech/bap/beckn/v1/b9e1d4f6-7c2a-4e8b-9d3f-5a6b7c8d9e0f",
-    "networkId": "ONDC:TRV10:FIN:fin:009",
+    "networkId": "ONDC:TRV10",
     "transactionId": "aa9c3077-90cd-46eb-a7b9-28763b34bbc2",
     "messageId": "50ace3a0-b5a0-49f2-84af-129f767cb68f",
     "timestamp": "2026-08-07T12:19:51.138Z",

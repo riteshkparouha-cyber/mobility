@@ -6,14 +6,6 @@
     "bpp_id": "api.eu.moving.tech/dobpp/beckn/a7f3c8e2-4b5d-4c9a-8f6e-2d1a3b4c5d6e",
     "bpp_uri": "https://api.eu.moving.tech/dobpp/beckn/a7f3c8e2-4b5d-4c9a-8f6e-2d1a3b4c5d6e",
     "domain": "ONDC:TRV10",
-    "location": {
-      "city": {
-        "code": "fin:009"
-      },
-      "country": {
-        "code": "FIN"
-      }
-    },
     "message_id": "25cd9bc2-ed93-43be-96c3-20caf0571c5d",
     "timestamp": "2026-08-07T12:22:20.645Z",
     "transaction_id": "aa9c3077-90cd-46eb-a7b9-28763b34bbc2",

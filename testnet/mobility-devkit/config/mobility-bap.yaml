@@ -10,7 +10,7 @@ http:
   port: 8081
   timeout:
     read: 30
-    write: 30
+    write: 60
     idle: 30
 pluginManager:
   root: ./plugins
@@ -63,8 +63,9 @@ modules:
             extendedSchema_enabled: "true"
             extendedSchema_cacheTTL: "86400"
             extendedSchema_maxCacheSize: "100"
-            extendedSchema_downloadTimeout: "30"
+            extendedSchema_downloadTimeout: "60"
             extendedSchema_allowedDomains: "raw.githubusercontent.com,schema.beckn.io"
+            extendedSchema_localSchemaPath: "config/schema"
         signValidator:
           id: signvalidator
         router:
@@ -79,6 +80,11 @@ modules:
             ttl: "24h"
             indexTTL: "25h"
             storeSignature: "true"
+        payloadTransformer:
+          id: reqmapper
+          config:
+            mappingsFile: ./config/mobility-mappings.yaml
+            role: bap
         middleware:
           - id: reqpreprocessor
             config:
@@ -88,6 +94,7 @@ modules:
         - validateSign
         - addRoute
         - validateSchema
+        - transformPayload
         - signAck
 
   # ─────────────────────────────────────────────────────────────────
@@ -133,8 +140,9 @@ modules:
             extendedSchema_enabled: "true"
             extendedSchema_cacheTTL: "86400"
             extendedSchema_maxCacheSize: "100"
-            extendedSchema_downloadTimeout: "30"
+            extendedSchema_downloadTimeout: "60"
             extendedSchema_allowedDomains: "raw.githubusercontent.com,schema.beckn.io"
+            extendedSchema_localSchemaPath: "config/schema"
         router:
           id: router
           config:
@@ -149,12 +157,18 @@ modules:
             ttl: "24h"
             indexTTL: "25h"
             storeSignature: "true"
+        payloadTransformer:
+          id: reqmapper
+          config:
+            mappingsFile: ./config/mobility-mappings.yaml
+            role: bap
         middleware:
           - id: reqpreprocessor
             config:
               contextKeys: transactionId,messageId
               role: bap
       steps:
+        - transformPayload
         - addRoute
         - storePayload
         - validateSchema

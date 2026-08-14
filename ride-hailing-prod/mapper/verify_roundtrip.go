@@ -67,8 +67,8 @@ func main() {
 	fmt.Printf("Compiled actions: %s\n\n", strings.Join(actions, ", "))
 
 	flows := []flow{
-		{name: "search <-> discover", v1File: "search.json", v2File: "v2/discover.json", toV2: direction{"search", "bap"}, toV1: direction{"discover", "bpp"}},
-		{name: "on_search <-> on_discover", v1File: "on_search.json", v2File: "v2/on_discover.json", toV2: direction{"on_search", "bpp"}, toV1: direction{"on_discover", "bap"}},
+		{name: "discover <-> discover", v1File: "discover.json", v2File: "v2/discover.json", toV2: direction{"discover", "bap"}, toV1: direction{"discover", "bpp"}},
+		{name: "on_discover <-> on_discover", v1File: "on_discover.json", v2File: "v2/on_discover.json", toV2: direction{"on_discover", "bpp"}, toV1: direction{"on_discover", "bap"}},
 		{name: "select <-> select", v1File: "select.json", v2File: "v2/select.json", toV2: direction{"select", "bap"}, toV1: direction{"select", "bpp"}},
 		{name: "on_select <-> on_select", v1File: "on_select.json", v2File: "v2/on_select.json", toV2: direction{"on_select", "bpp"}, toV1: direction{"on_select", "bap"}},
 		{name: "init <-> init", v1File: "init.json", v2File: "v2/init.json", toV2: direction{"init", "bap"}, toV1: direction{"init", "bpp"}},
