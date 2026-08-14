@@ -1728,7 +1728,7 @@ mappings:
               "status": { "code": "ACTIVE" },
               "commitments": [{
                 "id": "commitment-1",
-                "status": { "descriptor": { "code": "ACCEPTED" } },
+                "status": { "descriptor": { "code": "ACTIVE" } },
                 "resources": [{
                   "id": $item.id,
                   "descriptor": {
@@ -1793,7 +1793,8 @@ mappings:
                       "contact": { "phone": $cust.contact.phone },
                       "person": {
                         "name": $cust.person.name,
-                        "gender": $cust.person.gender
+                        "gender": $cust.person.gender,
+                        "tags": $cust.person.tags
                       }
                     }
                   }
@@ -1828,8 +1829,7 @@ mappings:
                         "telephone": $cust.contact.phone
                       },
                       "billingName": $bill.name,
-                      "billingPhone": $bill.phone,
-                      "tags": $cust.person.tags
+                      "billingPhone": $bill.phone
                     }
                   }
                 ]),
@@ -1919,7 +1919,7 @@ mappings:
                     "contact": { "phone": $pAttr.customer.contact.phone },
                     "person": {
                       "name": $pAttr.customer.person.name,
-                      "tags": $paxAttr.tags
+                      "tags": $pAttr.customer.person.tags
                     }
                   },
                   "stops": $rAttr.stops ? $rAttr.stops : []
@@ -2266,6 +2266,7 @@ mappings:
                     "@context": $drvCtx,
                     "@type": "Driver",
                     "person": {
+                      "id": $agent.person.name,
                       "name": $agent.person.name,
                       "personAttributes": { "gender": $agent.person.gender }
                     },
@@ -2661,6 +2662,7 @@ mappings:
                     "@context": $drvCtx,
                     "@type": "Driver",
                     "person": {
+                      "id": $agent.person.name,
                       "name": $agent.person.name,
                       "personAttributes": { "gender": $agent.person.gender }
                     },

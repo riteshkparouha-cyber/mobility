@@ -427,7 +427,7 @@ mappings:
             "networkId": $ctx.domain,
             "bapId": $ctx.bap_id,
             "bapUri": $ctx.bap_uri,
-            "bppId": $ctx.bpp_id,
+            "bppId": ($provider.id ? $provider.id : $ctx.bpp_id),
             "bppUri": $ctx.bpp_uri,
             "transactionId": $ctx.transaction_id,
             "messageId": $ctx.message_id,
@@ -490,7 +490,7 @@ mappings:
             "networkId": $ctx.domain,
             "bapId": $ctx.bap_id,
             "bapUri": $ctx.bap_uri,
-            "bppId": $ctx.bpp_id,
+            "bppId": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id),
             "bppUri": $ctx.bpp_uri,
             "transactionId": $ctx.transaction_id,
             "messageId": $ctx.message_id,
@@ -820,7 +820,7 @@ mappings:
             "networkId": $ctx.domain,
             "bapId": $ctx.bap_id,
             "bapUri": $ctx.bap_uri,
-            "bppId": $ctx.bpp_id,
+            "bppId": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id),
             "bppUri": $ctx.bpp_uri,
             "transactionId": $ctx.transaction_id,
             "messageId": $ctx.message_id,
@@ -1048,7 +1048,7 @@ mappings:
             "networkId": $ctx.domain,
             "bapId": $ctx.bap_id,
             "bapUri": $ctx.bap_uri,
-            "bppId": $ctx.bpp_id,
+            "bppId": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id),
             "bppUri": $ctx.bpp_uri,
             "transactionId": $ctx.transaction_id,
             "messageId": $ctx.message_id,
@@ -1167,7 +1167,7 @@ mappings:
                     }
                   } : {}
                 ]),
-                { "id": $ctx.bpp_id, "role": "BPP" }
+                { "id": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id), "role": "BPP" }
               ],
               "settlements": $pay ? [{
                 "id": $pay.id ? $pay.id : "6330f490-e317-4cf7-953b-6915fa2ad8e4",
@@ -1445,7 +1445,7 @@ mappings:
             "networkId": $ctx.domain,
             "bapId": $ctx.bap_id,
             "bapUri": $ctx.bap_uri,
-            "bppId": $ctx.bpp_id,
+            "bppId": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id),
             "bppUri": $ctx.bpp_uri,
             "transactionId": $ctx.transaction_id,
             "messageId": $ctx.message_id,
@@ -1609,7 +1609,7 @@ mappings:
                     }
                   } : {}
                 ]),
-                { "id": $ctx.bpp_id, "role": "BPP" }
+                { "id": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id), "role": "BPP" }
               ],
               "settlements": $pay ? [{
                 "id": $pay.id,
@@ -1714,7 +1714,7 @@ mappings:
             "networkId": $ctx.domain,
             "bapId": $ctx.bap_id,
             "bapUri": $ctx.bap_uri,
-            "bppId": $ctx.bpp_id,
+            "bppId": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id),
             "bppUri": $ctx.bpp_uri,
             "transactionId": $ctx.transaction_id,
             "messageId": $ctx.message_id,
@@ -1728,7 +1728,7 @@ mappings:
               "status": { "code": "ACTIVE" },
               "commitments": [{
                 "id": "commitment-1",
-                "status": { "descriptor": { "code": "ACCEPTED" } },
+                "status": { "descriptor": { "code": "ACTIVE" } },
                 "resources": [{
                   "id": $item.id,
                   "descriptor": {
@@ -1793,7 +1793,8 @@ mappings:
                       "contact": { "phone": $cust.contact.phone },
                       "person": {
                         "name": $cust.person.name,
-                        "gender": $cust.person.gender
+                        "gender": $cust.person.gender,
+                        "tags": $cust.person.tags
                       }
                     }
                   }
@@ -1828,12 +1829,11 @@ mappings:
                         "telephone": $cust.contact.phone
                       },
                       "billingName": $bill.name,
-                      "billingPhone": $bill.phone,
-                      "tags": $cust.person.tags
+                      "billingPhone": $bill.phone
                     }
                   }
                 ]),
-                { "id": $ctx.bpp_id, "role": "BPP" }
+                { "id": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id), "role": "BPP" }
               ],
               "settlements": $pay ? [{
                 "id": $pay.id ? $pay.id : "settlement-1",
@@ -1919,7 +1919,7 @@ mappings:
                     "contact": { "phone": $pAttr.customer.contact.phone },
                     "person": {
                       "name": $pAttr.customer.person.name,
-                      "tags": $paxAttr.tags
+                      "tags": $pAttr.customer.person.tags
                     }
                   },
                   "stops": $rAttr.stops ? $rAttr.stops : []
@@ -2131,7 +2131,7 @@ mappings:
             "networkId": $ctx.domain,
             "bapId": $ctx.bap_id,
             "bapUri": $ctx.bap_uri,
-            "bppId": $ctx.bpp_id,
+            "bppId": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id),
             "bppUri": $ctx.bpp_uri,
             "transactionId": $ctx.transaction_id,
             "messageId": $ctx.message_id,
@@ -2266,6 +2266,7 @@ mappings:
                     "@context": $drvCtx,
                     "@type": "Driver",
                     "person": {
+                      "id": $agent.person.name,
                       "name": $agent.person.name,
                       "personAttributes": { "gender": $agent.person.gender }
                     },
@@ -2295,7 +2296,7 @@ mappings:
                     }
                   } : {}
                 ]),
-                { "id": $ctx.bpp_id, "role": "BPP" }
+                { "id": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id), "role": "BPP" }
               ],
               "settlements": $pay ? [{
                 "id": $pay.id,
@@ -2526,7 +2527,7 @@ mappings:
             "networkId": $ctx.domain,
             "bapId": $ctx.bap_id,
             "bapUri": $ctx.bap_uri,
-            "bppId": $ctx.bpp_id,
+            "bppId": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id),
             "bppUri": $ctx.bpp_uri,
             "transactionId": $ctx.transaction_id,
             "messageId": $ctx.message_id,
@@ -2661,6 +2662,7 @@ mappings:
                     "@context": $drvCtx,
                     "@type": "Driver",
                     "person": {
+                      "id": $agent.person.name,
                       "name": $agent.person.name,
                       "personAttributes": { "gender": $agent.person.gender }
                     },
@@ -2689,7 +2691,7 @@ mappings:
                     "person": { "id": $cust.person.name, "name": $cust.person.name, "telephone": $cust.contact.phone }
                   }
                 },
-                { "id": $ctx.bpp_id, "role": "BPP" }
+                { "id": ($ord.provider.id ? $ord.provider.id : $ctx.bpp_id), "role": "BPP" }
               ],
               "settlements": $pay ? [{
                 "id": $pay.id,

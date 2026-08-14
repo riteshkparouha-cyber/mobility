@@ -30,7 +30,7 @@
           "id": "commitment-1",
           "status": {
             "descriptor": {
-              "code": "ACCEPTED"
+              "code": "ACTIVE"
             }
           },
           "offer": {
@@ -185,7 +185,58 @@
                 "phone": "9457514297"
               },
               "person": {
-                "name": "gopal_lynx"
+                "name": "gopal_lynx",
+                "tags": [
+                  {
+                    "descriptor": {
+                      "code": "CUSTOMER_INFO",
+                      "name": "Customer info"
+                    },
+                    "display": false,
+                    "list": [
+                      {
+                        "descriptor": {
+                          "code": "CUSTOMER_LANGUAGE",
+                          "name": "Customer language"
+                        },
+                        "display": false,
+                        "value": "ENGLISH"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "ENABLE_OTP_LESS_RIDE",
+                          "name": "Enable otp less ride"
+                        },
+                        "display": false,
+                        "value": "True"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "ENABLE_FREQUENT_LOCATION_UPDATES",
+                          "name": "Enable frequent location updates"
+                        },
+                        "display": false,
+                        "value": "True"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "CONSENT_TO_SHARE_MOBILE_NUMBER",
+                          "name": "Consent to share mobile number"
+                        },
+                        "display": false,
+                        "value": "False"
+                      },
+                      {
+                        "descriptor": {
+                          "code": "NIGHT_SAFETY_CHECK",
+                          "name": "Night safety check"
+                        },
+                        "display": false,
+                        "value": "True"
+                      }
+                    ]
+                  }
+                ]
               }
             }
           }
@@ -226,58 +277,7 @@
               "id": "gopal_lynx"
             },
             "billingName": "gopal_lynx",
-            "billingPhone": "94******97",
-            "tags": [
-              {
-                "descriptor": {
-                  "code": "CUSTOMER_INFO",
-                  "name": "Customer info"
-                },
-                "display": false,
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "CUSTOMER_LANGUAGE",
-                      "name": "Customer language"
-                    },
-                    "display": false,
-                    "value": "ENGLISH"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "ENABLE_OTP_LESS_RIDE",
-                      "name": "Enable otp less ride"
-                    },
-                    "display": false,
-                    "value": "True"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "ENABLE_FREQUENT_LOCATION_UPDATES",
-                      "name": "Enable frequent location updates"
-                    },
-                    "display": false,
-                    "value": "True"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "CONSENT_TO_SHARE_MOBILE_NUMBER",
-                      "name": "Consent to share mobile number"
-                    },
-                    "display": false,
-                    "value": "False"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "NIGHT_SAFETY_CHECK",
-                      "name": "Night safety check"
-                    },
-                    "display": false,
-                    "value": "True"
-                  }
-                ]
-              }
-            ]
+            "billingPhone": "94******97"
           }
         },
         {

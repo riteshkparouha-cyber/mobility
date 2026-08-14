@@ -26,7 +26,7 @@
     "contract": {
       "id": "e2fa76ac-b6e7-4ddd-8ce1-e5798ae140be",
       "descriptor": {
-        "name": "BLACK ride: Malminkatu 16 \u2192 Mannerheimintie 2",
+        "name": "BLACK ride: Malminkatu 16 → Mannerheimintie 2",
         "shortDesc": "Ride-hailing"
       },
       "status": {
@@ -525,7 +525,10 @@
             "@type": "Driver",
             "person": {
               "name": "DhruvBG Singh",
-              "personAttributes": { "gender": "MALE" }
+              "personAttributes": {
+                "gender": "MALE"
+              },
+              "id": "DhruvBG Singh"
             },
             "contactPhone": "9058142238",
             "rating": 5.0,
